@@ -40,3 +40,11 @@ Route::get('/about', function(){
 })*/
 
 Route::get('item/{category}', 'CategoriesController@show');
+
+Route::get('blade', function(){
+    return view('good');
+});
+
+Route::get('/goods', 'GoodController@display');
+
+Route::get('/posts/{slug}', 'PostsController@view');

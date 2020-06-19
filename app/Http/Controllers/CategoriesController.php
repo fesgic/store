@@ -13,6 +13,10 @@ class CategoriesController extends Controller
       'electronics' => 'Phones, Laptops, Electric Kettle'
     ];
 
+    if (! array_key_exists($category,$categories)){
+      abort(404,'Sorry, the requested resource could not be found');
+    }
+
     return view('item', [
       'category' => $categories[$category]
     ]);
